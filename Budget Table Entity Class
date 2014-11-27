@@ -1,0 +1,71 @@
+package model;
+
+import java.io.Serializable;
+import javax.persistence.*;
+
+
+/**
+ * The persistent class for the Budget database table.
+ * 
+ */
+@Entity
+@NamedQuery(name="Budget.findAll", query="SELECT b FROM Budget b")
+public class Budget implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private String projectID;
+
+	private float labor;
+
+	private float supply;
+
+	private float total;
+
+	private float travel;
+
+	public Budget() {
+	}
+
+	public String getProjectID() {
+		return this.projectID;
+	}
+
+	public void setProjectID(String projectID) {
+		this.projectID = projectID;
+	}
+
+	public float getLabor() {
+		return this.labor;
+	}
+
+	public void setLabor(float labor) {
+		this.labor = labor;
+	}
+
+	public float getSupply() {
+		return this.supply;
+	}
+
+	public void setSupply(float supply) {
+		this.supply = supply;
+	}
+
+	public float getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(float total) {
+		this.total = total;
+	}
+
+	public float getTravel() {
+		return this.travel;
+	}
+
+	public void setTravel(float travel) {
+		this.travel = travel;
+	}
+
+}
