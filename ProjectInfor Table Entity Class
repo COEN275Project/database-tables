@@ -1,0 +1,112 @@
+package model;
+
+import java.io.Serializable;
+import javax.persistence.*;
+
+
+/**
+ * The persistent class for the ProjectInfor database table.
+ * 
+ */
+@Entity
+@NamedQuery(name="ProjectInfor.findAll", query="SELECT p FROM ProjectInfor p")
+public class ProjectInfor implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private String projectID;
+
+	private String budget;
+
+	private String endDate;
+
+	@Column(name="`Falculty Advisor`")
+	private String falculty_Advisor;
+
+	private String projectDescription;
+
+	private String projectName;
+
+	private String projectOutcome;
+
+	private String startDate;
+
+	private String teamID;
+
+	public ProjectInfor() {
+	}
+
+	public String getProjectID() {
+		return this.projectID;
+	}
+
+	public void setProjectID(String projectID) {
+		this.projectID = projectID;
+	}
+
+	public String getBudget() {
+		return this.budget;
+	}
+
+	public void setBudget(String budget) {
+		this.budget = budget;
+	}
+
+	public String getEndDate() {
+		return this.endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+	}
+
+	public String getFalculty_Advisor() {
+		return this.falculty_Advisor;
+	}
+
+	public void setFalculty_Advisor(String falculty_Advisor) {
+		this.falculty_Advisor = falculty_Advisor;
+	}
+
+	public String getProjectDescription() {
+		return this.projectDescription;
+	}
+
+	public void setProjectDescription(String projectDescription) {
+		this.projectDescription = projectDescription;
+	}
+
+	public String getProjectName() {
+		return this.projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+	}
+
+	public String getProjectOutcome() {
+		return this.projectOutcome;
+	}
+
+	public void setProjectOutcome(String projectOutcome) {
+		this.projectOutcome = projectOutcome;
+	}
+
+	public String getStartDate() {
+		return this.startDate;
+	}
+
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+	}
+
+	public String getTeamID() {
+		return this.teamID;
+	}
+
+	public void setTeamID(String teamID) {
+		this.teamID = teamID;
+	}
+
+}
